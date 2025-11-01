@@ -41,13 +41,13 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "5432:5432"
+      - "5436:5432"
 
   airflow-webserver:
     <<: *airflow-common
     command: webserver
     ports:
-      - "8080:8080"
+      - "8084:8080"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 30s
@@ -109,7 +109,7 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - "5433:5432"
+      - "5437:5432"
 
 volumes:
   postgres-db-volume:
