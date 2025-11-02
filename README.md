@@ -274,11 +274,12 @@ If you see "Path '/home/airflow/.dbt' does not exist", re-run step 5 of installa
 - "Implemented CI/CD with GitHub Actions"
 - "Version-controlled data models and transformations"
 
+
 ## Additional Resources
 
-- DBT Documentation: https://docs.getdbt.com/
-- Airflow Documentation: https://airflow.apache.org/docs/
-- Project Blog Post: [Add your blog post link]
+- [DBT Documentation](https://docs.getdbt.com/)
+- [Airflow Documentation](https://airflow.apache.org/docs/)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 
 ## Contributing
 
@@ -290,6 +291,14 @@ MIT License
 
 ## Author
 
-Data Engineering Portfolio Project
+**Ümit Bora Günaydın**
 
-Last Updated: November 2025
+Data Engineer | Building modern data pipelines
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/ümit-bora-günaydın/)
+
+**Contact:** https://www.linkedin.com/in/ümit-bora-günaydın/
+
+---
+
+**Last Updated:** November 2025
