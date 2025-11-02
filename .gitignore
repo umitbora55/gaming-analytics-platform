@@ -61,3 +61,32 @@ Thumbs.db
 
 # Docker
 *.log
+
+# Pre-commit
+.pre-commit-config.yaml.backup
+
+# DBT
+dbt_project/gaming_dbt/target/
+dbt_project/gaming_dbt/dbt_packages/
+dbt_project/gaming_dbt/logs/
+dbt_project/gaming_dbt/package-lock.yml
+
+# Airflow
+*.log
+*.pid
+airflow.db
+airflow.cfg
+standalone_admin_password.txt
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
