@@ -1,0 +1,33 @@
+name: 'gaming_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'gaming_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  gaming_dbt:
+    # Bronze layer - staging models
+    staging:
+      +materialized: view
+      +schema: bronze
+    
+    # Silver layer - cleaned and transformed
+    marts:
+      +materialized: table
+      +schema: silver
+    
+    # Gold layer - aggregations and metrics
+    metrics:
+      +materialized: table
+      +schema: gold

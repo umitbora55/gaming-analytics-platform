@@ -1,0 +1,76 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Raw data ingested from CSV files
+    database: gaming_dwh
+    schema: bronze
+    tables:
+      - name: player_demographics
+        description: Player profile and registration data
+        columns:
+          - name: player_id
+            description: Unique player identifier
+            tests:
+              - unique
+              - not_null
+          - name: registration_date
+            description: Player registration date
+          - name: country
+            description: Player country code
+          - name: age_group
+            description: Player age group category
+          - name: gender
+            description: Player gender
+          - name: preferred_platform
+            description: Player's preferred gaming platform
+          - name: account_status
+            description: Account status (active/inactive/banned)
+          - name: last_login
+            description: Last login timestamp
+      
+      - name: player_events
+        description: Player gaming events and interactions
+        columns:
+          - name: event_id
+            description: Unique event identifier
+            tests:
+              - unique
+              - not_null
+          - name: player_id
+            description: Player who triggered the event
+          - name: event_type
+            description: Type of event
+          - name: event_timestamp
+            description: When the event occurred
+          - name: game_version
+            description: Game version at time of event
+          - name: platform
+            description: Platform where event occurred
+          - name: country
+            description: Country where event occurred
+          - name: session_id
+            description: Session identifier
+      
+      - name: purchases
+        description: In-app purchase transactions
+        columns:
+          - name: transaction_id
+            description: Unique transaction identifier
+            tests:
+              - unique
+              - not_null
+          - name: player_id
+            description: Player who made the purchase
+          - name: purchase_timestamp
+            description: When purchase was made
+          - name: product_id
+            description: Product identifier
+          - name: product_category
+            description: Product category
+          - name: amount
+            description: Purchase amount
+          - name: currency
+            description: Currency code
+          - name: payment_method
+            description: Payment method used

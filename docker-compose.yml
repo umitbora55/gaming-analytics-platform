@@ -18,6 +18,7 @@ x-airflow-common:
     - ./plugins:/opt/airflow/plugins
     - ./scripts:/opt/airflow/scripts
     - ./data:/opt/airflow/data
+    - ./dbt_project/gaming_dbt:/opt/airflow/gaming_dbt
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -101,6 +102,7 @@ services:
       POSTGRES_DB: gaming_dwh
     volumes:
       - warehouse-db-volume:/var/lib/postgresql/data
+      - ./scripts:/workspace/scripts
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "warehouse"]
       interval: 10s
